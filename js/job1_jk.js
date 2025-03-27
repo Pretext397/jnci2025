@@ -19,18 +19,18 @@ function filterAndSortJobsByPrefix(prefix) {
 function joblist(poscode) {
   coapi.getJobList(params, function (data) {
     //取到数据之后的操作
-    console.log(data);
+    // console.log(data);
     var html = "";
     job = data.resultbody.joblist;
     if (job == undefined || job == []) {
       html =
         ' <div style="text-align:center;line-height: 100px;">暂无数据</div>';
     } else {
-      console.log(poscode, "poscode2");
+      // console.log(poscode, "poscode2");
       const job = filterAndSortJobsByPrefix(poscode);
-      console.log(job, "过滤数组");
+      // console.log(job, "过滤数组");
       if (job == undefined  || job.length == 0) {
-        console.log('7777')
+        // console.log('7777')
           html =
             ' <div style="text-align:center;line-height: 100px;">暂无数据</div>';
         } else{
@@ -74,7 +74,7 @@ $(document).on("click", ".jobtit", function () {
   let jobid = $(this).attr("jobid");
   var that = $(this);
   coapi.getJobDetail(jobid, function (data) {
-    console.log( data.resultbody,' data.resultbody')
+    // console.log( data.resultbody,' data.resultbody')
     data.resultbody.jobinfo = data.resultbody.jobinfo.replace(
       /(专业要求:|资格证书或其他要求:|招聘人数:|岗位职责:|专业要求：|资格证书或其他要求：|招聘人数：|岗位职责：|岗位要求：|职位要求：)/gm,
       "<b>$1</b>"
