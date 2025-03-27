@@ -46,6 +46,7 @@ html,body{
 }
 .top .logo img{
     width: 200px;
+    display: block;
 }
 .top .nav1{
     display: flex;
