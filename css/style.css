@@ -45,7 +45,7 @@ html,body{
     cursor: pointer;
 }
 .top .logo img{
-    width: 80%;
+    width: 200px;
 }
 .top .nav1{
     display: flex;
